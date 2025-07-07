@@ -1,0 +1,41 @@
+<div class="col p-4">
+  <h2 class="text-center mb-4">Login</h2>
+
+  {% for field, errors in form.errors.items() %}
+    <div class="alert alert-danger">
+        {{ ', '.join(errors) }}
+    </div>
+  {% endfor %}
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="alert alert-info">{{ messages[0] }}</div>
+    {% endif %}
+  {% endwith %}
+
+  <form hx-post="{{ url_for('login') }}" hx-target="closest div" hx-swap="outerHTML">
+    {{ form.hidden_tag() }} <div class="mb-3">
+      {{ form.email.label(class="form-label") }}
+      {{ form.email(class="form-control", placeholder="name@example.com") }}
+    </div>
+    
+    <div class="mb-3">
+      {{ form.password.label(class="form-label") }}
+      {{ form.password(class="form-control") }}
+    </div>
+
+    {{ form.submit(class="btn btn-primary w-100") }}
+  </form>
+
+  <div class="text-center mt-3">
+    <p>
+      Don't have an account? 
+      <a href="#" 
+         hx-get="{{ url_for('register') }}" 
+         hx-target="#project-panel" 
+         hx-swap="innerHTML" 
+         class="link-primary">
+        Register here
+      </a>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="col p-4">
+  <h2 class="text-center mb-4">Register</h2>
+
+  {% for field, errors in form.errors.items() %}
+    <div class="alert alert-danger">
+        {{ ', '.join(errors) }}
+    </div>
+  {% endfor %}
+
+  <form hx-post="{{ url_for('register') }}" hx-target="this" hx-swap="outerHTML">
+    {{ form.hidden_tag() }} <div class="mb-3">
+      {{ form.username.label(class="form-label") }}
+      {{ form.username(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+      {{ form.email.label(class="form-label") }}
+      {{ form.email(class="form-control", placeholder="name@example.com") }}
+    </div>
+    
+    <div class="mb-3">
+      {{ form.password.label(class="form-label") }}
+      {{ form.password(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+      {{ form.confirm.label(class="form-label") }}
+      {{ form.confirm(class="form-control") }}
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Create Account</button>
+  </form>
+
+  <div class="text-center mt-3">
+    <p>
+      Already have an account? 
+      <a href="#" 
+         hx-get="{{ url_for('login') }}" 
+         hx-target="#project-panel" 
+         hx-swap="innerHTML" 
+         class="link-primary">
+        Login here
+      </a>
+    </p>
+  </div>
+</div>

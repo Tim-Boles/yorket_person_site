@@ -1,0 +1,7 @@
+Flask 
+flask-login
+flask-sqlalchemy
+flask-wtf
+email_validator
+rcon
+python-dotenv

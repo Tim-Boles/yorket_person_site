@@ -1,0 +1,34 @@
+{% set projects = [
+  {'name': 'Project Zomboid', 'icon': 'bi-joystick', 'htmx': '/server-stats'}
+] %}
+<h2 class="text-center mb-4 text-white">Projects</h2>
+<div class="project-desktop">
+  <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-4 p-4">
+    {% for project in projects %}
+    <div class="col text-center">
+      <div class="app-icon" hx-get="{{project.htmx}}">
+        <i class="bi {{ project.icon }}"></i>
+      </div>
+      <p class="app-label mt-2">{{ project.name }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- For now I need to leave this here but I believe this is a mistake in how I wired things -->
+
+<div id="title-row" hx-swap-oob="true" class="row align-items-center py-3">
+      <div class="col">
+        <h1 class="mb-0">Yorket.xyz</h1>
+      </div>
+      <div class="col-auto">
+        {% if current_user.is_authenticated %}
+          <!-- Shows when user is logged in -->
+          <span class="text-body-secondary me-3">Welcome, {{ current_user.username }}!</span>
+          <a href="{{ url_for('logout') }}" class="btn btn-outline-secondary btn-sm">Logout</a>
+        {% else %}
+          <!-- Shows when user is logged out -->
+          <div>It would be really cool if you made an account</div>
+        {% endif %}
+      </div>
+</div>
