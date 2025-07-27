@@ -1,0 +1,5 @@
+<form action="/upload/{{ service.get('NAME', 'coc') }}" method="post" enctype="multipart/form-data" 
+    class="border-2 border-solid border-stone-600 pt-4 mt-6">
+    <input type="file" name="pdf_file" accept=".pdf">
+    <input type="submit" value="Upload PDF">
+</form>

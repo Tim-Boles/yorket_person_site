@@ -1,0 +1,287 @@
+<div class="border-b-4 border-double border-stone-600 pb-4 mb-6">
+    <h1 style="font-family: 'IM Fell English SC', serif;" class="text-5xl font-normal text-stone-900 tracking-wider">{{ sheet.get('Investigators_Name', 'Walter Hahn') }}</h1>
+    <p class="text-xl text-stone-700">{{ sheet.get('Occupation', 'Occultist') }}</p>
+    <div class="flex flex-wrap gap-x-6 gap-y-1 text-stone-700 mt-2 text-sm">
+        <span><span class="font-semibold text-stone-800">PRONOUN:</span> {{ sheet.get('Pronouns', 'He') }}</span>
+        <span><span class="font-semibold text-stone-800">BIRTHPLACE:</span> {{ sheet.get('Birthplace', 'Zickhusen') }}</span>
+        <span><span class="font-semibold text-stone-800">AGE:</span> {{ sheet.get('Age', '35') }}</span>
+        <span><span class="font-semibold text-stone-800">RESIDENCE:</span> {{ sheet.get('Residence', 'N/A') }}</span>
+    </div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6" id="core-stats">
+
+    <div class="md:col-span-2 grid grid-cols-2 gap-4 text-center">
+        <div class="bg-stone-200 p-2 rounded-md border border-stone-400">
+            <p class="text-xs font-bold tracking-widest text-stone-600">STR</p>
+            <p class="text-3xl font-serif font-bold text-stone-900" hx-post="/discord/api/str/{{ sheet.get('STR', '0') }}" hx-swap="none">
+                {{ sheet.get('STR', '0') }}
+            </p>
+            <p class="text-sm font-serif text-stone-700" hx-post="/discord/api/str_half/{{ sheet.get('STR_half', '0') }}" hx-swap="none">
+                {{ sheet.get('STR_half', '0') }} (Hard)
+            </p>
+            <p class="text-sm font-serif text-stone-700" hx-post="/discord/api/str_fifth/{{ sheet.get('STR_fifth', '0') }}" hx-swap="none">
+                {{ sheet.get('STR_fifth', '0') }} (Extreme)
+            </p>
+        </div>
+        <div class="bg-stone-200 p-2 rounded-md border border-stone-400">
+            <p class="text-xs font-bold tracking-widest text-stone-600">DEX</p>
+            <p class="text-3xl font-serif font-bold text-stone-900" hx-post="/discord/api/dex/{{ sheet.get('DEX', '0') }}" hx-swap="none">
+                {{ sheet.get('DEX', '0') }}
+            </p>
+            <p class="text-sm font-serif text-stone-700" hx-post="/discord/api/dex_half/{{ sheet.get('DEX_half', '0') }}" hx-swap="none">
+                {{ sheet.get('DEX_half', '0') }} (Hard)
+            </p>
+            <p class="text-sm font-serif text-stone-700" hx-post="/discord/api/dex_fifth/{{ sheet.get('DEX_fifth', '0') }}" hx-swap="none">
+                {{ sheet.get('DEX_fifth', '0') }} (Extreme)
+            </p>
+        </div>
+        <div class="bg-stone-200 p-2 rounded-md border border-stone-400">
+            <p class="text-xs font-bold tracking-widest text-stone-600">CON</p>
+            <p class="text-3xl font-serif font-bold text-stone-900" hx-post="/discord/api/con/{{ sheet.get('CON', '0') }}" hx-swap="none">
+                {{ sheet.get('CON', '0') }}
+            </p>
+            <p class="text-sm font-serif text-stone-700" hx-post="/discord/api/con_half/{{ sheet.get('CON_half', '0') }}" hx-swap="none">
+                {{ sheet.get('CON_half', '0') }} (Hard)
+            </p>
+            <p class="text-sm font-serif text-stone-700" hx-post="/discord/api/con_fifth/{{ sheet.get('CON_fifth', '0') }}" hx-swap="none">
+                {{ sheet.get('CON_fifth', '0') }} (Extreme)
+            </p>
+        </div>
+        <div class="bg-stone-200 p-2 rounded-md border border-stone-400">
+            <p class="text-xs font-bold tracking-widest text-stone-600">SIZ</p>
+            <p class="text-3xl font-serif font-bold text-stone-900" hx-post="/discord/api/siz/{{ sheet.get('SIZ', '0') }}" hx-swap="none">
+                {{ sheet.get('SIZ', '0') }}
+            </p>
+            <p class="text-sm font-serif text-stone-700" hx-post="/discord/api/siz_half/{{ sheet.get('SIZ_half', '0') }}" hx-swap="none">
+                {{ sheet.get('SIZ_half', '0') }} (Hard)
+            </p>
+            <p class="text-sm font-serif text-stone-700" hx-post="/discord/api/siz_fifth/{{ sheet.get('SIZ_fifth', '0') }}" hx-swap="none">
+                {{ sheet.get('SIZ_fifth', '0') }} (Extreme)
+            </p>
+        </div>
+        <div class="bg-stone-200 p-2 rounded-md border border-stone-400">
+            <p class="text-xs font-bold tracking-widest text-stone-600">POW</p>
+            <p class="text-3xl font-serif font-bold text-stone-900" hx-post="/discord/api/pow/{{ sheet.get('POW', '0') }}" hx-swap="none">
+                {{ sheet.get('POW', '0') }}
+            </p>
+            <p class="text-sm font-serif text-stone-700" hx-post="/discord/api/pow_half/{{ sheet.get('POW_half', '0') }}" hx-swap="none">
+                {{ sheet.get('POW_half', '0') }} (Hard)
+            </p>
+            <p class="text-sm font-serif text-stone-700" hx-post="/discord/api/pow_fifth/{{ sheet.get('POW_fifth', '0') }}" hx-swap="none">
+                {{ sheet.get('POW_fifth', '0') }} (Extreme)
+            </p>
+        </div>
+        <div class="bg-stone-200 p-2 rounded-md border border-stone-400">
+            <p class="text-xs font-bold tracking-widest text-stone-600">INT</p>
+            <p class="text-3xl font-serif font-bold text-stone-900" hx-post="/discord/api/int/{{ sheet.get('INT', '0') }}" hx-swap="none">
+                {{ sheet.get('INT', '0') }}
+            </p>
+            <p class="text-sm font-serif text-stone-700" hx-post="/discord/api/int_half/{{ sheet.get('INT_half', '0') }}" hx-swap="none">
+                {{ sheet.get('INT_half', '0') }} (Hard)
+            </p>
+            <p class="text-sm font-serif text-stone-700" hx-post="/discord/api/int_fifth/{{ sheet.get('INT_fifth', '0') }}" hx-swap="none">
+                {{ sheet.get('INT_fifth', '0') }} (Extreme)
+            </p>
+        </div>
+        <div class="bg-stone-200 p-2 rounded-md border border-stone-400">
+            <p class="text-xs font-bold tracking-widest text-stone-600">APP</p>
+            <p class="text-3xl font-serif font-bold text-stone-900" hx-post="/discord/api/app/{{ sheet.get('APP', '0') }}" hx-swap="none">
+                {{ sheet.get('APP', '0') }}
+            </p>
+            <p class="text-sm font-serif text-stone-700" hx-post="/discord/api/app_half/{{ sheet.get('APP_half', '0') }}" hx-swap="none">
+                {{ sheet.get('APP_half', '0') }} (Hard)
+            </p>
+            <p class="text-sm font-serif text-stone-700" hx-post="/discord/api/app_fifth/{{ sheet.get('APP_fifth', '0') }}" hx-swap="none">
+                {{ sheet.get('APP_fifth', '0') }} (Extreme)
+            </p>
+        </div>
+        <div class="bg-stone-200 p-2 rounded-md border border-stone-400">
+            <p class="text-xs font-bold tracking-widest text-stone-600">EDU</p>
+            <p class="text-3xl font-serif font-bold text-stone-900" hx-post="/discord/api/edu/{{ sheet.get('EDU', '0') }}" hx-swap="none">
+                {{ sheet.get('EDU', '0') }}
+            </p>
+            <p class="text-sm font-serif text-stone-700" hx-post="/discord/api/edu_half/{{ sheet.get('EDU_half', '0') }}" hx-swap="none">
+                {{ sheet.get('EDU_half', '0') }} (Hard)
+            </p>
+            <p class="text-sm font-serif text-stone-700" hx-post="/discord/api/edu_fifth/{{ sheet.get('EDU_fifth', '0') }}" hx-swap="none">
+                {{ sheet.get('EDU_fifth', '0') }} (Extreme)
+            </p>
+        </div>
+    </div>
+
+<div class="flex flex-col space-y-4 text-center">
+    <div class="bg-stone-200 p-3 rounded-md border-2 border-stone-400 h-full flex flex-col justify-center">
+        <p class="text-sm font-bold uppercase text-stone-600">Hit Points</p>
+        <p class="text-2xl font-serif font-bold text-stone-900">{{ sheet.get('CurrentHP', '0') }}/{{ sheet.get('StartingHP', '0') }}</p>
+    </div>
+    <div class="bg-stone-200 p-3 rounded-md border-2 border-stone-400 h-full flex flex-col justify-center">
+        <p class="text-sm font-bold uppercase text-stone-600">Magic Points</p>
+        <p class="text-2xl font-serif font-bold text-stone-900">{{ sheet.get('CurrentMagic', '0') }}/{{ sheet.get('StartingMagic', '0') }}</p>
+    </div>
+    <div class="bg-stone-200 p-3 rounded-md border-2 border-stone-400 h-full flex flex-col justify-center">
+        <p class="text-sm font-bold uppercase text-stone-600">Luck</p>
+            <p class="text-2xl font-serif font-bold text-stone-900 cursor-pointer hover:underline" hx-post="/discord/api/luck_roll/{{ sheet.get('CurrentLuck', '0') }}" hx-swap="none">{{ sheet.get('CurrentLuck', '0') }}</p>
+    </div>
+    <div class="bg-stone-200 p-3 rounded-md border-2 border-stone-400 h-full flex flex-col justify-center">
+        <p class="text-sm font-bold uppercase text-stone-600">Movement</p>
+        <p class="text-2xl font-serif font-bold text-stone-900">{{ sheet.get('MOV', '0') }}</p>
+    </div>
+    <div class="bg-stone-200 p-3 rounded-md border-2 border-stone-400">
+        <p class="text-sm font-bold uppercase text-stone-600 mb-2">Sanity</p>
+        <div class="grid grid-cols-2 gap-2 text-center">
+            <div class="bg-stone-100 p-2 rounded-md border border-stone-300">
+                <p class="text-xs font-bold uppercase text-stone-500">Current</p>
+                    <p class="text-2xl font-serif font-bold text-stone-800 cursor-pointer hover:underline" hx-post="/discord/api/sanity_check/{{ sheet.get('CurrentSanity', '0') }}" hx-swap="none">{{ sheet.get('CurrentSanity', '0') }}</p>
+            </div>
+            <div class="bg-stone-100 p-2 rounded-md border border-stone-300">
+                <p class="text-xs font-bold uppercase text-stone-500">Starting</p>
+                <p class="text-2xl font-serif font-bold text-stone-800">{{ sheet.get('StartingSanity', '0') }}</p>
+            </div>
+            <div class="bg-red-200 p-1 rounded-md border border-red-400">
+                <p class="text-xs font-bold uppercase text-red-600">Insanity</p>
+                <p class="text-base font-serif font-bold text-red-900">{{ sheet.get('InsaneSanity', '0') }}</p>
+            </div>
+            <div class="bg-stone-100 p-1 rounded-md border border-stone-300">
+                <p class="text-xs font-bold uppercase text-stone-500">Maximum</p>
+                <p class="text-base font-serif font-bold text-stone-800">{{ sheet.get('MaxSanity', '0') }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+
+
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center mb-6">
+    <div class="bg-stone-300 p-2 rounded-md border border-stone-400">
+        <p class="text-xs font-bold tracking-widest text-stone-600">Damage Bonus</p>
+        <p class="text-2xl font-serif font-bold text-stone-900">{{ sheet.get('DamageBonus', '0') }}</p>
+    </div>
+    <div class="bg-stone-300 p-2 rounded-md border border-stone-400">
+        <p class="text-xs font-bold tracking-widest text-stone-600">Build</p>
+        <p class="text-2xl font-serif font-bold text-stone-900">{{ sheet.get('Build', '0') }}</p>
+    </div>
+    <div class="bg-stone-300 p-2 rounded-md border border-stone-400">
+        <p class="text-xs font-bold tracking-widest text-stone-600">Cash</p>
+        <p class="text-2xl font-serif font-bold text-stone-900">${{ sheet.get('Cash', '0') }}</p>
+    </div>
+    <div class="bg-stone-300 p-2 rounded-md border border-stone-400">
+        <p class="text-xs font-bold tracking-widest text-stone-600">Spending Level</p>
+        <p class="text-2xl font-serif font-bold text-stone-900">${{ sheet.get('SpendingLevel', '0') }}</p>
+</div>
+                </div>
+
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-8">
+    <div class="lg:col-span-2">
+        <h2 style="font-family: 'IM Fell English SC', serif;" class="text-3xl text-stone-900 border-b border-stone-500 pb-2 mb-4">Skills</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-base">
+            {% for name, values in skills.items() %}
+                <div class="flex justify-between border-b border-dotted border-stone-400 py-1">
+                    <span>{{ name }}</span>
+                    <div class="font-bold text-stone-800 space-x-1">
+                        <span class="cursor-pointer hover:underline" hx-post="/discord/api/skill/{{ name | urlencode }}/{{ values[0] }}" hx-swap="none">{{ values[0] }}%</span>
+                        <span>(</span>
+                        <span class="cursor-pointer hover:underline" hx-post="/discord/api/skill/{{ name | urlencode }} (Hard)/{{ values[1] }}" hx-swap="none">{{ values[1] }}%</span>
+                        <span>/</span>
+                        <span class="cursor-pointer hover:underline" hx-post="/discord/api/skill/{{ name | urlencode }} (Extreme)/{{ values[2] }}" hx-swap="none">{{ values[2] }}%</span>
+                        <span>)</span>
+        </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="space-y-4">
+        <h2 style="font-family: 'IM Fell English SC', serif;" class="text-3xl text-stone-900 border-b border-stone-500 pb-2 mb-4">Backstory</h2>
+        <div class="bg-stone-200 p-3 rounded-sm border border-stone-400">
+            <h3 class="font-bold text-stone-800 tracking-wide">My Story</h3>
+            <p class="text-sm text-stone-700 font-serif leading-relaxed">{{ sheet.get('MyStory', '') }}</p>
+        </div>
+        <div class="bg-stone-200 p-3 rounded-sm border border-stone-400">
+            <h3 class="font-bold text-stone-800 tracking-wide">Ideology & Beliefs</h3>
+            <p class="text-sm text-stone-700 font-serif leading-relaxed">{{ sheet.get('Ideology/Beliefs', '') }}</p>
+    </div>
+        <div class="bg-stone-200 p-3 rounded-sm border border-stone-400">
+            <h3 class="font-bold text-stone-800 tracking-wide">Significant People</h3>
+            <p class="text-sm text-stone-700 font-serif leading-relaxed">{{ sheet.get('Significant People', '') }}</p>
+</div>
+         <div class="bg-stone-200 p-3 rounded-sm border border-stone-400">
+            <h3 class="font-bold text-stone-800 tracking-wide">Meaningful Locations</h3>
+            <p class="text-sm text-stone-700 font-serif leading-relaxed">{{ sheet.get('Locations', '') }}</p>
+        </div>
+        <div class="bg-stone-200 p-3 rounded-sm border border-stone-400">
+            <h3 class="font-bold text-stone-800 tracking-wide">Treasured Possessions</h3>
+            <p class="text-sm text-stone-700 font-serif leading-relaxed">{{ sheet.get('Possessions', '') }}</p>
+        </div>
+        <div class="bg-stone-200 p-3 rounded-md border border-stone-400">
+            <h3 class="font-bold text-stone-800 tracking-wide">Traits</h3>
+            <p class="text-sm text-stone-700 font-serif leading-relaxed">{{ sheet.get('Traits', '') }}</p>
+        </div>
+        <div class="bg-stone-200 p-3 rounded-md border border-stone-400">
+            <h3 class="font-bold text-stone-800 tracking-wide">Gear & Possessions</h3>
+            <p class="text-sm text-stone-700 font-serif leading-relaxed">{{ sheet.get('Gear/Possessions', '') }}</p>
+        </div>
+    </div>
+</div>
+
+<!-- WEAPONS & COMBAT -->
+<div class="mt-8">
+    <h2 style="font-family: 'IM Fell English SC', serif;" class="text-3xl text-stone-900 border-b border-stone-500 pb-2 mb-4">Combat & Weapons</h2>
+    <div class="overflow-x-auto bg-stone-100 rounded-lg shadow-md border border-stone-400">
+        <table class="min-w-full text-sm text-left">
+            <thead class="text-xs text-stone-700 uppercase bg-stone-300">
+                <tr>
+                    <th scope="col" class="px-6 py-3 m-3 text-center">Weapon</th>
+                    <th scope="col" class="px-6 py-3 m-3 text-center">Skill</th>
+                    <th scope="col" class="px-6 py-3 m-3 text-center">Damage</th>
+                    <th scope="col" class="px-4 py-3 m-3 text-center">Range</th>
+                    <th scope="col" class="px-4 py-3 m-3 text-center">Attacks</th>
+                    <th scope="col" class="px-4 py-3 m-3 text-center">Ammo</th>
+                    <th scope="col" class="px-4 py-3 m-3 text-center">Malf.</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for weapon in weapons %}
+                <tr class="border-b border-stone-300 hover:bg-stone-200">
+                    <th scope="row" class="px-6 py-4 font-bold text-stone-900 whitespace-nowrap">{{ weapon.name or '-' }}</th>
+                    <td class="px-6 py-4 text-center font-mono">
+                        {% if weapon.regular and weapon.regular != '0' %}
+                            <div class="space-x-1">
+                                <span class="cursor-pointer hover:underline" hx-post="/discord/api/skill/{{ weapon.name | urlencode }}/{{ weapon.regular }}" hx-swap="none">{{ weapon.regular }}%</span>
+                                <span>(</span>
+                                <span class="cursor-pointer hover:underline" hx-post="/discord/api/skill/{{ weapon.name | urlencode }} (Hard)/{{ weapon.hard or '0' }}" hx-swap="none">{{ weapon.hard or '0' }}%</span>
+                                <span>/</span>
+                                <span class="cursor-pointer hover:underline" hx-post="/discord/api/skill/{{ weapon.name | urlencode }} (Extreme)/{{ weapon.extreme or '0' }}" hx-swap="none">{{ weapon.extreme or '0' }}%</span>
+                                <span>)</span>
+                            </div>
+                        {% else %}
+                            -
+                        {% endif %}
+                    </td>
+                    <td class="px-6 py-4 text-center font-mono">{{ weapon.damage or '-' }}</td>
+                    <td class="px-4 py-4 text-center">{{ weapon.range or '-' }}</td>
+                    <td class="px-4 py-4 text-center">{{ weapon.attacks or '-' }}</td>
+                    <td class="px-4 py-4 text-center">{{ weapon.ammo or '-' }}</td>
+                    <td class="px-4 py-4 text-center text-red-700 font-semibold">{{ weapon.malf or '-' }}</td>
+                </tr>
+            {% else %}
+                <tr><td colspan="7" class="text-center p-4 text-stone-500">No weapons listed.</td></tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- FELLOW INVESTIGATORS -->
+<div class="mt-8">
+    <h2 style="font-family: 'IM Fell English SC', serif;" class="text-3xl text-stone-900 border-b border-stone-500 pb-2 mb-4">Fellow Investigators</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {% for inv in investigators %}
+        <div class="bg-stone-200 p-3 rounded-md border border-stone-400">
+            <p class="font-bold text-stone-800">{{ inv.name }}</p>
+            <p class="text-sm text-stone-600">{{ inv.player }}</p>
+        </div>
+    {% else %}
+        <p class="text-stone-600 italic">No fellow investigators listed.</p>
+    {% endfor %}
+    </div>
+</div>

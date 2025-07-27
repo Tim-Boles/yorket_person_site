@@ -5,3 +5,6 @@ flask-wtf
 email_validator
 rcon
 python-dotenv
+pypdf
+discord
+google-cloud-storage

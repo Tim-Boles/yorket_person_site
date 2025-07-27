@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+<ul>
+    {% for button in buttons %}
+        <li hx-get="/{{ button.url }}"
+            hx-target="#current-context">
+            {{ button.name }}
+        </li>
+    {% endfor %}
+</ul>
+<div id="current-context" class="flex-grow">
+</div>
+{% endblock %}
